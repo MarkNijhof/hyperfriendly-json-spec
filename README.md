@@ -5,6 +5,7 @@ A friendly JSON hypermedia format
 
 media-type: "vnd/hyperfriendly+json"
 
+```
 {
 	"_links" : {
 		"self" : { "href" : "..." },
@@ -28,3 +29,4 @@ media-type: "vnd/hyperfriendly+json"
 		}
 	]
 }
+```
