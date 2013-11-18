@@ -4,11 +4,84 @@ A friendly JSON hypermedia format
 
 **media-type:** "vnd/hyperfriendly+json"
 
-##Example
-
+##Simple case with links
 ```javascript
 {
   "_links": {
+    "self": {
+      "href": "/users/1"
+    },
+    "friends": {
+      "href": "/friends/1"
+    }
+  },
+  "firstName": "Bob",
+  "lastName": "Anderson",
+  "address": {
+    "street": "Somestreet",
+    "postalCode": "1337",
+    "city": "Leetville"
+  }
+}
+```
+
+##Forms
+```javascript
+{
+  "_links": {
+    "self": {
+      "href": "/users"
+    },
+    "create": {
+      "href": "/users",
+      "method": "POST",
+      "schema": {
+        "title": "Create user",
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "required": true
+          },
+          "lastName": {
+            "type": "string",
+            "required": true
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9999
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+##Templated url
+```javascript
+{
+  "_links" : {
+    "byName": {
+      "href": "/users?name={name}"
+    }
+  }
+}
+```
+
+##Collections
+```javascript
+{
+  "_links" : {
     "self": {
       "href": "/users/page=2"
     },
@@ -17,27 +90,6 @@ A friendly JSON hypermedia format
     },
     "prev": {
       "href": "/users?page=1"
-    },
-    "find": {
-      "href": "/users/search?name={name}"
-    },
-    "create": {
-      "href": "/users",
-      "method": "post",
-      "schema": {
-        "description": "A user",
-        "type": "object",
-        "properties": {
-          "firstname": {
-            "type": "string",
-            "title": "First Name"
-          },
-          "lastname": {
-            "type": "string",
-            "title": "Last Name"
-          }
-        }
-      }
     }
   },
   "_items": [
@@ -55,7 +107,13 @@ A friendly JSON hypermedia format
         }
       }
     }
-  ],
+  ]
+}
+```
+
+##Errors
+```javascript
+{
   "_errors": [
     {
       "title": "Some error",
