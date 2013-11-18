@@ -88,6 +88,21 @@ A friendly JSON hypermedia format
 }
 ```
 
+##Forms with external schema
+```javascript
+{
+  "_links": {
+    "create": {
+      "href": "/users",
+      "method": "POST",
+      "schema": {
+        "$ref": "http://api.test.com/schema/new-user.json"
+      }
+    }
+  }
+}
+```
+
 ##Collections
 ```javascript
 {
