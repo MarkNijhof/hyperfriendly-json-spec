@@ -4,7 +4,20 @@ A friendly JSON hypermedia format
 
 **media-type:** "vnd/hyperfriendly+json"
 
-##Simple case with links
+##Vanilla JSON
+```javascript
+{
+  "firstName": "Bob",
+  "lastName": "Anderson",
+  "address": {
+    "street": "Somestreet",
+    "postalCode": "1337",
+    "city": "Leetville"
+  }
+}
+```
+
+##With links
 ```javascript
 {
   "_links": {
@@ -25,13 +38,21 @@ A friendly JSON hypermedia format
 }
 ```
 
+##Templated urls
+```javascript
+{
+  "_links" : {
+    "byName": {
+      "href": "/users?name={name}"
+    }
+  }
+}
+```
+
 ##Forms
 ```javascript
 {
   "_links": {
-    "self": {
-      "href": "/users"
-    },
     "create": {
       "href": "/users",
       "method": "POST",
@@ -62,17 +83,6 @@ A friendly JSON hypermedia format
           }
         }
       }
-    }
-  }
-}
-```
-
-##Templated url
-```javascript
-{
-  "_links" : {
-    "byName": {
-      "href": "/users?name={name}"
     }
   }
 }
