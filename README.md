@@ -49,6 +49,21 @@ A friendly JSON hypermedia format
 }
 ```
 
+##Templated with optional parameters
+```javascript
+{
+  "_links" : {
+    "search": {
+      "href": "/users?name={name}",
+      "optional": {
+        "occupation": "&occupation={occupation}",
+        "city": "&city={city}"
+      }
+    }
+  }
+}
+```
+
 ##Forms
 ```javascript
 {
