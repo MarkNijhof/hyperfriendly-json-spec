@@ -54,11 +54,7 @@ A friendly JSON hypermedia format
 {
   "_links" : {
     "search": {
-      "href": "/users?name={name}",
-      "optional": {
-        "occupation": "&occupation={occupation}",
-        "city": "&city={city}"
-      }
+      "href": "/users/{id}?occupation={?occupation}&city={?city}"
     }
   }
 }
