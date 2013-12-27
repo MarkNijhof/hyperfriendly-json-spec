@@ -142,8 +142,7 @@ A friendly JSON hypermedia format
   "_errors": [
     {
       "title": "Some error",
-      "message": "Some error has occurred",
-      "code": "XYZ123"
+      "message": "Some error has occurred"
     }
   ]
 }
