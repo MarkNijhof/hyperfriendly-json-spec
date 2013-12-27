@@ -56,7 +56,6 @@ A friendly JSON hypermedia format
     "create": {
       "href": "/users",
       "method": "POST",
-      "enctype": "application/json", 
       "schema": {
         "title": "Create user",
         "type": "object",
