@@ -1,6 +1,6 @@
 #hyperfriendly-json-spec
 
-A simple and friendly JSON hypermedia format inspired by hyper+json (https://github.com/cainus/hyper-json-spec).
+A simple and friendly JSON hypermedia format inspired by [hyper+json](https://github.com/cainus/hyper-json-spec).
 
 **media-type:** "vnd/hyperfriendly+json"
 
@@ -46,13 +46,13 @@ A hyperfriendly+json object MAY contain a _links object. If present, this object
 
 ##Templated urls
 
-Links MAY contain templated uris conforming to the spec (http://tools.ietf.org/html/rfc6570)
+Links MAY contain templated uris conforming to the [spec](http://tools.ietf.org/html/rfc6570)
 
 ```javascript
 {
   "_links" : {
     "byName": {
-      "href": "/users?name={name}"
+      "href": "/users{?name}"
     }
   }
 }
@@ -60,7 +60,7 @@ Links MAY contain templated uris conforming to the spec (http://tools.ietf.org/h
 
 ##Forms
 
-A link MAY contain a schema element conforming to the json schema spec (http://json-schema.org/)
+A link MAY contain a schema element conforming to the [json schema spec](http://json-schema.org/)
 
 ```javascript
 {
