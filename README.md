@@ -156,7 +156,7 @@ A resource MAY contain an _items array. When an _items array is present the reso
 
 ##Errors
 
-A resource MAY contain an _errors collection. A error item MUST have a title and a message.
+Errors may be represented as an _errors collection. A error item MUST have a title and a message.
 
 ```javascript
 {
