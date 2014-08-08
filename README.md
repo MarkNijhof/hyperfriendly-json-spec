@@ -154,6 +154,32 @@ A resource MAY contain an _items array. When an _items array is present the reso
 }
 ```
 
+##Feeds
+A feed is a special collection where the payload is an event wrapped in a apecial envelope. It contains a history of events and can be chained using next and prev links.
+
+The envelope MUST contain a messageType, sequenceNumber and a body object. It MAY contain a headers object with metadata.
+
+```javascript
+{
+  "_links" : {
+  //...
+  },
+  "_items": [
+  {
+    "messageType": "SomethingHappened",
+    "sequenceNumber": 1,
+    "body": {
+      "foo": 1,
+      "bar": "something"
+    },
+    "headers": {
+      "meta": "data"
+    }
+  }
+  ]
+}
+```
+
 ##Errors
 
 Errors may be represented as an _errors collection. A error item MUST have a title and a message.
