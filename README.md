@@ -2,7 +2,7 @@
 
 A simple and friendly JSON hypermedia format inspired by [hyper+json](https://github.com/cainus/hyper-json-spec).
 
-**media-type:** "vnd/frende.hyperfriendly+json" (in practice application/hyperfriendly+json is used, but this media type is technically more correct...)
+**media-type:** "vnd/hyperfriendly+json" (in practice application/hyperfriendly+json is used, but this media type is technically more correct...)
 
 ##Vanilla JSON
 
