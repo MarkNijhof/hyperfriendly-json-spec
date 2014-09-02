@@ -111,7 +111,7 @@ Json schema also supports referencing other schema.
       "href": "/users",
       "method": "POST",
       "schema": {
-        "$ref": "http://api.test.com/schema/new-user.json"
+        "href": "http://api.test.com/schema/new-user.json"
       }
     }
   }
